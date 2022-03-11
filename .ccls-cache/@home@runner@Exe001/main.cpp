@@ -29,7 +29,7 @@ void populavertor(){
 
 void imprimevetor(){
 
-  cout << "Imprimindo Vetor Aleatorio Entre 0 - 9:\n";
+  cout << "Imprimindo Vetor Aleatorio Entre zero e nove: ";
   
   for(i = 0; i < sizeof(vetor)/4; i++)
   {
@@ -57,12 +57,12 @@ void elementospareseimpares(){
       contaimpa++;
     }
   }
-  cout << "Todos os numeros pares do vetor:\n";
+  cout << "Todos os numeros pares do vetor: ";
   for(i = 0; i < contapar; i++)
   {
     cout <<par[i];
   }
-  cout << "\nTodos os numeros impares do vetor:\n";
+  cout << "\nTodos os numeros impares do vetor: ";
   for(i = 0; i < contaimpa; i++)
   {
     cout << impar[i];
@@ -113,6 +113,40 @@ void somarelementos(){
 
 void inversovet(){
   
+  int iverso[10];
+  int j;
+  
+  for(i = 0, j = 9; i < 10; i++, j--)
+  {
+    iverso[j] = vetor[i];
+  }
+  cout << "Vetor invertido: ";
+  for(i = 0; i < sizeof(iverso)/4; i++)
+  {
+    cout << iverso[i] << " ";
+  }
+  cout << "\n\n";
+}
+
+void ordemcrecente(){
+  int aux;
+  
+  for(i = 0; i < sizeof(vetor)/4; i++)
+  {
+    for (int j=i+1; j < sizeof(vetor)/4; j++)
+      if (vetor[i] > vetor[j])
+      {
+        aux = vetor[i];
+        vetor[i] = vetor[j];
+        vetor[j] = aux;
+      }
+  }
+  cout << "Vetor em ordem crecente: ";
+  for(i = 0; i < sizeof(vetor)/4; i++)
+  {
+    cout << vetor[i] << " ";
+  }
+  cout << "\n\n";
 }
 
 int main() {  
@@ -123,6 +157,7 @@ int main() {
   elementospares();
   somarelementos();
   inversovet();
+  ordemcrecente();
   
   return 0;
 }
