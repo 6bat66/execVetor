@@ -1,3 +1,3 @@
 # execVetor
 
-Att da Faculdade
+Atividade da Faculdade
